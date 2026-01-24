@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VL - Game Designer Portfolio</title>
+    <title>Yenna - Game Designer Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET Y REGLAS GLOBALES --- */
+        /* --- RESET --- */
         * {
             box-sizing: border-box;
         }
 
-        /* --- NUEVA PALETA "V-INSPIRED" --- */
+        /* --- PALETA "V-INSPIRED" (TAEHYUNG) --- */
         :root {
             --bg-color: #F5F5DC; /* Beige/Crema Clásico */
-            --card-bg: #FFFAF0; /* Blanco Floral (ligeramente más cálido que el blanco puro) */
-            --text-main: #1B3022; /* Verde muy oscuro (casi negro) para lectura */
-            --brand-primary: #2D5A27; /* Verde Bosque (Main Brand) */
-            --brand-accent: #6B0F1A; /* Bordó / Vino (Accent) */
-            --brand-gold: #D4AF37; /* Dorado Vintage */
+            --card-bg: #FFFAF0; /* Blanco Floral */
+            --text-main: #1B3022; /* Verde muy oscuro para lectura */
+            --brand-primary: #2D5A27; /* Verde Bosque (Color Principal) */
+            --brand-accent: #6B0F1A; /* Bordó / Vino (Color Acento) */
+            --brand-gold: #D4AF37; /* Dorado Vintage (Detalles) */
         }
 
         body {
-            font-family: 'Lato', sans-serif; /* Fuente moderna para lectura */
+            font-family: 'Lato', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -35,7 +35,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-            /* Contenedor principal */
+            /* Contenedor principal limitado a 900px */
             body > * {
                 width: 100%;
                 max-width: 900px;
@@ -43,7 +43,7 @@
                 padding: 0 20px;
             }
 
-        /* --- BOTONES DE IDIOMA --- */
+        /* --- IDIOMAS --- */
         .language-switcher {
             position: absolute;
             top: 20px;
@@ -58,19 +58,17 @@
             border: 1px solid var(--brand-primary);
             color: var(--brand-primary);
             padding: 5px 15px;
-            border-radius: 4px; /* Bordes menos redondeados para más elegancia */
+            border-radius: 4px;
             cursor: pointer;
             font-family: 'Lato', sans-serif;
             font-weight: bold;
             font-size: 0.85rem;
-            letter-spacing: 1px;
             transition: all 0.3s;
         }
 
             .lang-btn:hover, .lang-btn.active {
                 background-color: var(--brand-primary);
                 color: #fff;
-                border-color: var(--brand-primary);
             }
 
         /* --- HEADER --- */
@@ -78,22 +76,22 @@
             text-align: center;
             padding-top: 80px;
             padding-bottom: 40px;
-            border-bottom: 1px solid var(--brand-gold); /* Borde más fino */
+            border-bottom: 1px solid var(--brand-gold);
             margin-bottom: 40px;
         }
 
             header h1 {
-                font-family: 'Playfair Display', serif; /* Fuente Elegante */
+                font-family: 'Playfair Display', serif;
                 font-size: 4.5rem;
                 margin: 0;
                 color: var(--brand-primary);
                 line-height: 1;
-                font-style: italic; /* Un toque extra de estilo */
+                font-style: italic;
             }
 
             header h2 {
                 font-family: 'Lato', sans-serif;
-                color: var(--brand-accent); /* Ahora en Bordó */
+                color: var(--brand-accent);
                 font-weight: 400;
                 letter-spacing: 2px;
                 text-transform: uppercase;
@@ -101,20 +99,20 @@
                 font-size: 1rem;
             }
 
-        /* --- SECCIONES DESPLEGABLES --- */
+        /* --- DESPLEGABLES (DETAILS) --- */
         details {
             background-color: var(--card-bg);
-            border-radius: 2px; /* Bordes más rectos */
+            border-radius: 2px;
             margin-bottom: 25px;
-            box-shadow: 4px 4px 0px rgba(45, 90, 39, 0.1); /* Sombra sólida, estilo retro */
-            border: 1px solid rgba(212, 175, 55, 0.3); /* Borde sutil dorado */
+            box-shadow: 4px 4px 0px rgba(45, 90, 39, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-left: 6px solid var(--brand-primary);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
             details[open] {
-                border-left: 6px solid var(--brand-accent); /* Cambia a bordó al abrir */
+                border-left: 6px solid var(--brand-accent);
             }
 
         summary {
@@ -152,9 +150,7 @@
             color: var(--brand-accent);
         }
 
-        /* Ocultar marcador por defecto */
-        summary-webkit-details-marker
-        {
+        summary-webkit-details-marker {
             display: none;
         }
 
@@ -186,12 +182,20 @@
             font-size: 1.3rem;
         }
 
-        /* --- ENLACES Y BOTONES --- */
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* --- BOTONES Y LINKS --- */
         .links-assets {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
             .links-assets a {
@@ -213,25 +217,20 @@
                 .links-assets a:hover {
                     background-color: var(--brand-primary);
                     color: #FFF;
-                    box-shadow: 2px 2px 0px var(--brand-gold); /* Efecto pop sutil */
+                    box-shadow: 2px 2px 0px var(--brand-gold);
                     transform: translateY(-2px);
                 }
 
-        a {
+        /* Links dentro del texto corrido */
+        .details-content p a, .details-content li a {
             color: var(--brand-accent);
             text-decoration: none;
             border-bottom: 1px dotted var(--brand-accent);
-            transition: color 0.2s;
         }
 
-            a:hover {
+            .details-content p a:hover, .details-content li a:hover {
                 color: var(--brand-gold);
             }
-
-        /* Quitamos estilos de enlace genérico a los botones para no pisarlos */
-        .links-assets a {
-            border-bottom: 1px solid var(--brand-primary);
-        }
 
         /* --- FOOTER --- */
         footer {
@@ -249,8 +248,6 @@
             height: auto;
             display: block;
             margin: 0 auto 25px auto;
-            /* Filtro opcional si tu firma es negra y querés que sea verde */
-            /* filter: hue-rotate(90deg); */
         }
 
         /* --- UTILIDADES --- */
@@ -258,7 +255,7 @@
             display: none;
         }
 
-        /* --- MEDIA QUERIES --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3.5rem;
@@ -302,11 +299,12 @@
     </div>
 
     <header>
-        <h1>Yenna</h1> <h2> Game Designer • Systems & UX </h2>
+        <h1>Yenna</h1>
+        <h2> Game Designer • Systems & UX </h2>
     </header>
 
     <section id="about-me">
-        <details open>
+        <details>
             <summary>
                 <span class="lang-es">Sobre Mí</span>
                 <span class="lang-en">About Me</span>
@@ -319,8 +317,8 @@
                     <ul>
                         <li><strong>Estudios:</strong> Tecnicatura en Diseño y Programación de Videojuegos.</li>
                         <li><strong>Idiomas:</strong> Español, Inglés, Mandarín, Alemán.</li>
-                        <li><strong>Tech Stack:</strong> Unity (C#), Unreal Engine 5.</li>
-                        <li><strong>Arte & Diseño:</strong> Pixel Art, Illustrator, Photoshop.</li>
+                        <li><strong>Motores:</strong> Unity (C#), Unreal Engine 5.</li>
+                        <li><strong>Herramientas:</strong> Pixel Art • <strong>Adobe Photoshop & Illustrator</strong>.</li>
                     </ul>
 
                     <h4>Filosofía de Diseño</h4>
@@ -334,8 +332,8 @@
                     <ul>
                         <li><strong>Studies:</strong> Technical Degree in Game Design & Programming.</li>
                         <li><strong>Languages:</strong> Spanish, English, Mandarin, German.</li>
-                        <li><strong>Tech Stack:</strong> Unity (C#), Unreal Engine 5.</li>
-                        <li><strong>Art & Design:</strong> Pixel Art, Illustrator, Photoshop.</li>
+                        <li><strong>Engines:</strong> Unity (C#), Unreal Engine 5.</li>
+                        <li><strong>Tools:</strong> Pixel Art • <strong>Adobe Photoshop & Illustrator</strong>.</li>
                     </ul>
 
                     <h4>Design Philosophy</h4>
@@ -346,6 +344,7 @@
     </section>
 
     <section id="proyectos-destacados">
+
         <details>
             <summary>The Last of Them</summary>
             <div class="details-content">
@@ -396,8 +395,7 @@
 
                     <div class="links-assets">
                         <a href="https://docs.google.com/document/d/1X7ClNreQSTdsR6sLh-yeJGQ6TzBVjdHGas2mes3AJic/edit?tab=t.0#heading=h.umxclnaz0yu8" target="_blank">Ver GDD (Diseño)</a>
-
-                        <a href="INSERTAR_LINK_AQUI" target="_blank">Ver Sitio Web</a>
+                        <a href="INSERTAR_LINK_SITIO_AQUI" target="_blank">Ver Sitio Web</a>
                     </div>
                 </div>
 
@@ -409,12 +407,51 @@
 
                     <div class="links-assets">
                         <a href="https://docs.google.com/document/d/13HkpiJP1RAUgfEz2CN0VYIUatKrgEyqicR18e9qEiWA/edit?usp=sharing" target="_blank">View GDD (Design)</a>
-
-                        <a href="INSERTAR_LINK_AQUI" target="_blank">View Website</a>
+                        <a href="INSERTAR_LINK_SITIO_AQUI" target="_blank">View Website</a>
                     </div>
                 </div>
             </div>
         </details>
+
+        <details>
+            <summary>Project Lewa</summary>
+            <div class="details-content">
+                <p style="color: var(--brand-accent); font-weight: bold; font-style: italic;">Dystopian Farming Sim • Unity 2.5D</p>
+
+                <div class="lang-es">
+                    <p><strong>Concepto:</strong> Un simulador de granja ambientado bajo el régimen totalitario de "Lewa". No solo cultivás para sobrevivir, sino que debés gestionar recursos escasos y evadir la vigilancia nocturna.</p>
+
+                    <h4>Características Técnicas</h4>
+                    <ul>
+                        <li><strong>Estilo Visual:</strong> Pipeline 2.5D (Sprites 2D en entorno 3D) con estética Pixel Art.</li>
+                        <li><strong>Mecánicas Core:</strong> Sistema de grilla para cultivos, gestión de Energía/Hambre y sistema de Sigilo (ciclo día/noche).</li>
+                    </ul>
+
+                    <p><strong>Mi Rol:</strong> Gameplay Programming (Unity) & Technical Art.</p>
+
+                    <div class="links-assets">
+                        <a href="#" style="opacity: 0.6; cursor: default;">En Desarrollo (WIP)</a>
+                    </div>
+                </div>
+
+                <div class="lang-en">
+                    <p><strong>Concept:</strong> A farming sim set under the "Lewa" totalitarian regime. You don't just farm to survive; you must manage scarce resources and evade night-time surveillance.</p>
+
+                    <h4>Technical Features</h4>
+                    <ul>
+                        <li><strong>Visual Style:</strong> 2.5D Pipeline (2D Sprites in 3D environment) with Pixel Art aesthetics.</li>
+                        <li><strong>Core Mechanics:</strong> Grid-based farming system, Hunger/Energy management, and Stealth system (day/night cycle).</li>
+                    </ul>
+
+                    <p><strong>My Role:</strong> Gameplay Programming (Unity) & Technical Art.</p>
+
+                    <div class="links-assets">
+                        <a href="#" style="opacity: 0.6; cursor: default;">Work in Progress</a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
     </section>
 
     <section id="contacto">
