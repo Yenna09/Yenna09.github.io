@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VL - Game Designer Portfolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
         /* --- RESET Y REGLAS GLOBALES --- */
         * {
-            box-sizing: border-box; /* Evita que el padding rompa el diseño en móviles */
+            box-sizing: border-box;
         }
 
-        /* --- PALETA DE COLORES "YENNA" --- */
+        /* --- NUEVA PALETA "V-INSPIRED" --- */
         :root {
-            --bg-color: #F9F5EB; /* Fondo Crema */
-            --card-bg: #FFFFFF; /* Tarjetas Blancas */
-            --text-main: #2C4A68; /* Texto Azul Oscuro */
-            --brand-purple: #7A1F8F; /* Títulos Violeta */
-            --brand-gold: #D4AF37; /* Detalles Dorados */
+            --bg-color: #F5F5DC; /* Beige/Crema Clásico */
+            --card-bg: #FFFAF0; /* Blanco Floral (ligeramente más cálido que el blanco puro) */
+            --text-main: #1B3022; /* Verde muy oscuro (casi negro) para lectura */
+            --brand-primary: #2D5A27; /* Verde Bosque (Main Brand) */
+            --brand-accent: #6B0F1A; /* Bordó / Vino (Accent) */
+            --brand-gold: #D4AF37; /* Dorado Vintage */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Lato', sans-serif; /* Fuente moderna para lectura */
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            /* Mejora la lectura de fuentes en móviles */
             -webkit-font-smoothing: antialiased;
         }
 
-            /* Contenedor principal responsivo */
+            /* Contenedor principal */
             body > * {
                 width: 100%;
                 max-width: 900px;
@@ -46,26 +50,27 @@
             right: 20px;
             display: flex;
             gap: 10px;
-            z-index: 10; /* Asegura que estén por encima de todo */
+            z-index: 10;
         }
 
         .lang-btn {
             background: transparent;
-            border: 2px solid var(--brand-purple);
-            color: var(--brand-purple);
-            padding: 5px 12px; /* Un poco más compacto para móvil */
-            border-radius: 20px;
+            border: 1px solid var(--brand-primary);
+            color: var(--brand-primary);
+            padding: 5px 15px;
+            border-radius: 4px; /* Bordes menos redondeados para más elegancia */
             cursor: pointer;
+            font-family: 'Lato', sans-serif;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
             transition: all 0.3s;
-            /* Evita el zoom al tocar en iPhone */
-            touch-action: manipulation;
         }
 
             .lang-btn:hover, .lang-btn.active {
-                background-color: var(--brand-purple);
+                background-color: var(--brand-primary);
                 color: #fff;
+                border-color: var(--brand-primary);
             }
 
         /* --- HEADER --- */
@@ -73,87 +78,96 @@
             text-align: center;
             padding-top: 80px;
             padding-bottom: 40px;
-            border-bottom: 2px solid var(--brand-gold);
+            border-bottom: 1px solid var(--brand-gold); /* Borde más fino */
             margin-bottom: 40px;
-            position: relative;
         }
 
             header h1 {
-                font-size: 4rem;
+                font-family: 'Playfair Display', serif; /* Fuente Elegante */
+                font-size: 4.5rem;
                 margin: 0;
-                color: var(--brand-purple);
-                line-height: 1.1;
+                color: var(--brand-primary);
+                line-height: 1;
+                font-style: italic; /* Un toque extra de estilo */
             }
 
             header h2 {
-                color: var(--brand-gold);
-                font-weight: 600;
-                letter-spacing: 1px;
+                font-family: 'Lato', sans-serif;
+                color: var(--brand-accent); /* Ahora en Bordó */
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-transform: uppercase;
                 margin-top: 15px;
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
 
-        /* --- PESTAÑAS DESPLEGABLES --- */
+        /* --- SECCIONES DESPLEGABLES --- */
         details {
             background-color: var(--card-bg);
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(44, 74, 104, 0.1);
-            border-left: 5px solid var(--brand-gold);
+            border-radius: 2px; /* Bordes más rectos */
+            margin-bottom: 25px;
+            box-shadow: 4px 4px 0px rgba(45, 90, 39, 0.1); /* Sombra sólida, estilo retro */
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Borde sutil dorado */
+            border-left: 6px solid var(--brand-primary);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
+            details[open] {
+                border-left: 6px solid var(--brand-accent); /* Cambia a bordó al abrir */
+            }
+
         summary {
-            padding: 20px 25px;
+            padding: 25px;
             cursor: pointer;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--brand-purple);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--brand-primary);
             display: flex;
             justify-content: space-between;
             align-items: center;
             list-style: none;
             outline: none;
-            background-color: #fff;
+            background-color: var(--card-bg);
             transition: background 0.2s;
-            /* Quita el resaltado azul al tocar en Android */
-            -webkit-tap-highlight-color: transparent;
         }
 
             summary:hover {
-                background-color: #fcfcfc;
+                background-color: #fff;
+                color: var(--brand-accent);
             }
 
             summary::after {
                 content: '+';
                 color: var(--brand-gold);
+                font-family: 'Lato', sans-serif;
                 font-size: 2rem;
                 font-weight: 300;
                 transition: transform 0.3s ease;
                 margin-left: 15px;
-                line-height: 1; /* Alineación vertical precisa */
             }
 
         details[open] summary::after {
             transform: rotate(45deg);
+            color: var(--brand-accent);
         }
 
-        summary-webkit-details-marker 
+        /* Ocultar marcador por defecto */
+        summary-webkit-details-marker
         {
             display: none;
         }
 
         .details-content {
-            padding: 0 25px 30px 25px;
+            padding: 0 30px 40px 30px;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.5s ease;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-5px);
+                transform: translateY(10px);
             }
 
             to {
@@ -163,74 +177,91 @@
         }
 
         h4 {
-            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
+            color: var(--brand-primary);
             border-bottom: 1px solid var(--brand-gold);
             display: inline-block;
             padding-bottom: 5px;
-            margin-top: 25px;
-            font-size: 1.1rem;
+            margin-top: 30px;
+            font-size: 1.3rem;
         }
 
-        ul {
-            padding-left: 20px; /* Mejor espacio para viñetas en móvil */
-        }
-
-        /* --- ESTILOS DE UTILIDAD --- */
+        /* --- ENLACES Y BOTONES --- */
         .links-assets {
             display: flex;
-            flex-wrap: wrap; /* Permite que los botones bajen de línea en móvil */
-            gap: 10px;
-            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
 
             .links-assets a {
                 display: inline-block;
-                background-color: var(--bg-color);
-                color: var(--brand-purple);
-                padding: 10px 20px;
+                background-color: transparent;
+                color: var(--brand-primary);
+                padding: 12px 25px;
                 text-decoration: none;
-                border-radius: 5px;
+                border-radius: 2px;
                 font-weight: bold;
-                border: 1px solid var(--brand-purple);
-                transition: background-color 0.2s;
-                flex: 1 1 auto; /* Botones flexibles pero no gigantes */
+                border: 1px solid var(--brand-primary);
+                transition: all 0.3s ease;
                 text-align: center;
+                letter-spacing: 0.5px;
+                font-size: 0.9rem;
+                text-transform: uppercase;
             }
 
                 .links-assets a:hover {
-                    background-color: var(--brand-purple);
+                    background-color: var(--brand-primary);
                     color: #FFF;
+                    box-shadow: 2px 2px 0px var(--brand-gold); /* Efecto pop sutil */
+                    transform: translateY(-2px);
                 }
 
+        a {
+            color: var(--brand-accent);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--brand-accent);
+            transition: color 0.2s;
+        }
+
+            a:hover {
+                color: var(--brand-gold);
+            }
+
+        /* Quitamos estilos de enlace genérico a los botones para no pisarlos */
+        .links-assets a {
+            border-bottom: 1px solid var(--brand-primary);
+        }
+
+        /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 50px 0;
-            margin-top: 60px;
+            padding: 60px 0;
+            margin-top: 80px;
             border-top: 1px solid var(--brand-gold);
-            color: var(--text-main);
+            color: var(--brand-primary);
             font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .firma-footer {
-            max-width: 150px;
+            max-width: 140px;
             height: auto;
             display: block;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 25px auto;
+            /* Filtro opcional si tu firma es negra y querés que sea verde */
+            /* filter: hue-rotate(90deg); */
         }
 
-        /* --- CLASES PARA OCULTAR/MOSTRAR IDIOMAS --- */
+        /* --- UTILIDADES --- */
         .lang-en {
             display: none;
         }
 
-        /* =========================================
-           MEDIA QUERIES (LA MAGIA RESPONSIVA)
-           ========================================= */
-
-        /* Para Tablets y Celulares grandes */
+        /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
 
             header {
@@ -238,55 +269,28 @@
             }
         }
 
-        /* Para Celulares (Portrait) */
         @media (max-width: 480px) {
-            body > * {
-                padding: 0 15px;
-            }
-            /* Márgenes laterales más finos */
-
-            header {
-                padding-top: 60px;
-                margin-bottom: 30px;
+            header h1 {
+                font-size: 2.5rem;
             }
 
-                header h1 {
-                    font-size: 2.2rem;
-                    word-wrap: break-word;
-                }
-
-                header h2 {
-                    font-size: 1rem;
-                    margin-top: 10px;
-                }
-
-            .language-switcher {
-                top: 15px;
-                right: 15px;
+            header h2 {
+                font-size: 0.85rem;
             }
 
             summary {
-                padding: 15px;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+                padding: 20px;
             }
-
-                summary::after {
-                    font-size: 1.5rem;
-                }
 
             .details-content {
-                padding: 0 15px 20px 15px;
-            }
-
-            h4 {
-                width: 100%;
-                border-bottom: 1px solid var(--brand-gold);
+                padding: 0 20px 30px 20px;
             }
 
             .links-assets a {
                 width: 100%;
+                display: block;
             }
-            /* Botones ancho completo en celular */
         }
     </style>
 </head>
@@ -298,83 +302,64 @@
     </div>
 
     <header>
-        <h1>Portfolio</h1>
-        <h2> Game Designer • Systems & UX • Unity/C# </h2>
+        <h1>Yenna</h1> <h2> Game Designer • Systems & UX </h2>
     </header>
 
     <section id="about-me">
         <details open>
             <summary>
-                <span class="lang-es">👤 Acerca de Mí</span>
-                <span class="lang-en">👤 About Me</span>
+                <span class="lang-es">Sobre Mí</span>
+                <span class="lang-en">About Me</span>
             </summary>
             <div class="details-content">
-
                 <div class="lang-es">
-                    <p>Diseñador de Juegos especializado en Diseño de Sistemas, UX y Prototipado Rápido en Unity y C#. Mi trabajo se centra en resolver desafíos de diseño con una mentalidad orientada a problemas e iteración continua.</p>
+                    <p>Diseñadora de Videojuegos en formación, especializada en Diseño de Sistemas y UX. Mi enfoque combina la lógica de la programación con una estética cuidada.</p>
 
-                    <h4>Educación y Habilidades</h4>
+                    <h4>Educación y Skills</h4>
                     <ul>
-                        <li><strong>Educación:</strong> Tecnicatura en Diseño y Programación de Videojuegos</li>
-                        <li><strong>Idiomas:</strong> Español • Inglés • Mandarín • Alemán</li>
-                        <li><strong>Herramientas:</strong> C# • Unity • Unreal Engine 5 • Blender • ZBrush • Office</li>
-                        <li><strong>Soft Skills:</strong> Proactivo • Trabajo en equipo • Creatividad • Resolución de problemas</li>
+                        <li><strong>Estudios:</strong> Tecnicatura en Diseño y Programación de Videojuegos.</li>
+                        <li><strong>Idiomas:</strong> Español, Inglés, Mandarín, Alemán.</li>
+                        <li><strong>Tech Stack:</strong> Unity (C#), Unreal Engine 5.</li>
+                        <li><strong>Arte & Diseño:</strong> Pixel Art, Illustrator, Photoshop.</li>
                     </ul>
 
-                    <h4>Metodología de Diseño</h4>
-                    <p class="design-method">
-                        <strong>Como diseño:</strong> Problema → Hipótesis + Prototipo → Test = Iterar. Analizo trade-offs y mido el impacto con telemetría simple y feedback de usuarios.
-                    </p>
+                    <h4>Filosofía de Diseño</h4>
+                    <p>Creo en iterar rápido: Problema → Hipótesis → Prototipo. Me gusta mezclar mecánicas sólidas con narrativas que tengan identidad propia.</p>
                 </div>
 
                 <div class="lang-en">
-                    <p> Game Designer specializing in Systems Design, UX, and Rapid Prototyping in Unity and C#. My work focuses on solving design challenges with a problem-oriented mindset and continuous iteration.</p>
+                    <p>Game Design student specializing in Systems Design and UX. My approach combines programming logic with a curated aesthetic.</p>
 
                     <h4>Education & Skills</h4>
                     <ul>
-                        <li><strong>Education:</strong> Technical degree in <strong>Video Game Design & Programming</strong></li>
-                        <li><strong>Languages:</strong> Spanish • English • Mandarin • German</li>
-                        <li><strong>Tools:</strong> C# • Unity • Unreal Engine 5 • Blender • ZBrush • Office</li>
-                        <li><strong>Soft Skills:</strong> Proactive • Teamwork • Creativity • Problem solving</li>
+                        <li><strong>Studies:</strong> Technical Degree in Game Design & Programming.</li>
+                        <li><strong>Languages:</strong> Spanish, English, Mandarin, German.</li>
+                        <li><strong>Tech Stack:</strong> Unity (C#), Unreal Engine 5.</li>
+                        <li><strong>Art & Design:</strong> Pixel Art, Illustrator, Photoshop.</li>
                     </ul>
 
-                    <h4>Design Methodology</h4>
-                    <p class="design-method">
-                        <strong>How I design:</strong> Problem → Hypothesis + Prototype → Test = Iterate. I iterate trade-offs and measure impact with simple telemetry and user feedback clips.
-                    </p>
+                    <h4>Design Philosophy</h4>
+                    <p>I believe in rapid iteration: Problem → Hypothesis → Prototype. I enjoy blending solid mechanics with narratives that possess a unique identity.</p>
                 </div>
-
             </div>
         </details>
     </section>
 
     <section id="proyectos-destacados">
-        <h2 style="text-align: center; margin-bottom: 30px; color: var(--brand-purple);">
-            <span class="lang-es">Proyectos Destacados</span>
-            <span class="lang-en">Featured Projects</span>
-        </h2>
-
         <details>
-            <summary>Project 1 – The last of them</summary>
+            <summary>The Last of Them</summary>
             <div class="details-content">
-                <p><strong>Type:</strong> Top-down Adventure • PC/WebGL</p>
+                <p style="color: var(--brand-accent); font-weight: bold; font-style: italic;">Top-down Adventure • PC/WebGL</p>
 
                 <div class="lang-es">
-                    <h4>High Concept</h4>
-                    <p><strong>Giro de horror inverso:</strong> Juegas como un brillante científico convertido en zombi, impulsado por recuerdos fragmentados para terminar la cura de la misma pandemia que lo transformó.</p>
+                    <p><strong>Concepto:</strong> Un giro de "horror inverso". Jugás como un científico convertido en zombi, impulsado por recuerdos fragmentados para terminar la cura de la pandemia que lo transformó.</p>
 
-                    <h4>Mi Rol y Equipo</h4>
-                    <p><strong>Mi rol:</strong> Producer & Game Designer • Level Designer</p>
-                    <p><strong>Equipo:</strong> World Design (Felipe Agustín Guzman, Nicolas Iaria Flores) • Level Design (Yazmine Löliger) • Content Design (Yazmine Löliger) • Programming (Felipe Agustín Guzman, Nicolas Iaria Flores)</p>
-
-                    <h4>Mecánicas Clave</h4>
+                    <h4>Mi Rol (Producer & Game Designer)</h4>
                     <ul>
-                        <li><strong>Control de Personaje:</strong> Movimiento WASD. Mirada y apuntado siguen al cursor. Sensación ágil y rápida.</li>
-                        <li><strong>Interacción:</strong> Clics contextuales en objetos ligados al pasado del doctor. Items de defensa personal disponibles.</li>
-                        <li><strong>Infección (Loop):</strong> Los humanos se transforman al ser abrumados, haciendo crecer tu horda. Tienen salud visible, improvisan armas y huyen con poca vida.</li>
+                        <li>Diseño de niveles y balanceo de la mecánica de "infección".</li>
+                        <li>Coordinación del equipo de arte y programación.</li>
                     </ul>
 
-                    <h4>Links y Assets</h4>
                     <div class="links-assets">
                         <a href="https://yenna019.itch.io/the-last-of-them" target="_blank">Jugar Demo</a>
                         <a href="https://github.com/NicolasIariaFlores/Parcial-2---Motores---GameDesign" target="_blank">Ver Código</a>
@@ -382,92 +367,71 @@
                 </div>
 
                 <div class="lang-en">
-                    <h4>High Concept</h4>
-                    <p><strong>Reverse-horror twist:</strong> You play as a brilliant scientist turned zombie, driven by fragmented memories to finish the cure to the very pandemic that changed him.</p>
+                    <p><strong>Concept:</strong> A "reverse-horror" twist. You play as a scientist turned zombie, driven by fragmented memories to finish the cure for the pandemic that changed him.</p>
 
-                    <h4>Role & Team</h4>
-                    <p><strong>My role:</strong> Producer & Game Designer • Level Designer</p>
-                    <p><strong>Team:</strong> World Design (Felipe Agustín Guzman, Nicolas Iaria Flores) • Level Design (Yazmine Löliger) • Content Design (Yazmine Löliger) • Programming (Felipe Agustín Guzman, Nicolas Iaria Flores)</p>
-
-                    <h4>Core Mechanics</h4>
+                    <h4>My Role (Producer & Game Designer)</h4>
                     <ul>
-                        <li><strong>Character Control:</strong> WASD movement. Facing and targeting follow mouse cursor. Snappy, agile feel.</li>
-                        <li><strong>Interaction:</strong> Contextual clicks on world objects tied to the doctor's past. Melee self-defense items available.</li>
-                        <li><strong>Infection Loop:</strong> Humans can turn when overwhelmed, glowing your horde. Humans have visible health, improvise melee weapons, and try to flee under 25% HP.</li>
+                        <li>Level design and balancing of the "infection" mechanic.</li>
+                        <li>Coordination of art and programming teams.</li>
                     </ul>
 
-                    <h4>Links & Assets</h4>
                     <div class="links-assets">
                         <a href="https://yenna019.itch.io/the-last-of-them" target="_blank">Play Demo</a>
                         <a href="https://github.com/NicolasIariaFlores/Parcial-2---Motores---GameDesign" target="_blank">View Code</a>
                     </div>
                 </div>
-
             </div>
         </details>
 
         <details>
-            <summary>Project 2 – Wasteland Luster</summary>
+            <summary>Wasteland Luster</summary>
             <div class="details-content">
-                <p><strong>Type:</strong> Action RPG • Open World</p>
+                <p style="color: var(--brand-accent); font-weight: bold; font-style: italic;">Action RPG • Open World</p>
 
                 <div class="lang-es">
-                    <h4>Elevator Pitch</h4>
-                    <p>Una fantasía científica post-apocalíptica donde la magia y la robótica colisionaron hace un milenio. Eres un Luster Scavenger eligiendo entre <strong>restaurar el orden o abrazar el hermoso caos.</strong></p>
+                    <p>Una fantasía científica post-apocalíptica donde la magia y la robótica colisionaron. Eres un <em>Luster Scavenger</em> eligiendo entre restaurar el orden o abrazar el caos.</p>
 
                     <h4>Pilares de Diseño</h4>
-                    <p>Melancólico, surrealista, esperanzador y absurdo. <strong>Exploración, combate sistémico y elección narrativa</strong> con extensiones transmedia.</p>
+                    <p>Exploración melancólica, combate sistémico y narrativa ramificada.</p>
 
-                    <h4>Marco Narrativo</h4>
-                    <p><strong>Conflicto:</strong> Ensamblar el Kernel Patch, que puede reparar la realidad o borrar el mundo fusionado. Arco de tres actos con <strong>rutas de múltiples finales.</strong></p>
+                    <div class="links-assets">
+                        <a href="https://docs.google.com/document/d/1X7ClNreQSTdsR6sLh-yeJGQ6TzBVjdHGas2mes3AJic/edit?tab=t.0#heading=h.umxclnaz0yu8" target="_blank">Ver GDD (Diseño)</a>
+                    </div>
+                </div>
 
-                    <div class="lang-en">
-                        <h4>Game Design Document (GDD)</h4>
-                        <div class="links-assets">
-                            <a href="https://docs.google.com/document/d/1X7ClNreQSTdsR6sLh-yeJGQ6TzBVjdHGas2mes3AJic/edit?tab=t.0#heading=h.umxclnaz0yu8" target="_blank">Ver documento</a>
-                        </div>
+                <div class="lang-en">
+                    <p>A post-apocalyptic science-fantasy where magic and robotics collided. You are a <em>Luster Scavenger</em> choosing between restoring order or embracing chaos.</p>
+
+                    <h4>Design Pillars</h4>
+                    <p>Melancholic exploration, systemic combat, and branching narrative.</p>
+
+                    <div class="links-assets">
+                        <a href="https://docs.google.com/document/d/13HkpiJP1RAUgfEz2CN0VYIUatKrgEyqicR18e9qEiWA/edit?usp=sharing" target="_blank">View GDD (Design)</a>
                     </div>
                 </div>
             </div>
-                <div class="lang-en">
-                    <h4>Elevator Pitch</h4>
-                    <p>A post-apocalyptic science-fantasy where magic and robotics collided a millennium ago. You are a Luster Scavenger choosing between <strong>restoring order or embracing beautiful chaos.</strong></p>
-
-                    <h4>Design Pillars</h4>
-                    <p>Melancholic, surreal, hopeful, and absurd. <strong>Exploration, systemic combat, and narrative choice</strong> with cross-media extensions.</p>
-
-                    <h4>Core Narrative</h4>
-                    <p><strong>Conflict:</strong> Assemble the Kernel Patch, which can repair reality or erase the fused world. Three act arc with <strong>multi-ending routes.</strong></p>
-                </div>
-
-                <div class="lang-en">
-                    <h4>Game Design Document (GDD)</h4>
-                    <div class="links-assets">
-                        <a href="https://docs.google.com/document/d/13HkpiJP1RAUgfEz2CN0VYIUatKrgEyqicR18e9qEiWA/edit?usp=sharing" target="_blank">View document</a>
-                    </div>
-                </div>
         </details>
     </section>
 
     <section id="contacto">
         <details>
             <summary>
-                <span class="lang-es">📬 Contacto</span>
-                <span class="lang-en">📬 Contact</span>
+                <span class="lang-es">Contacto</span>
+                <span class="lang-en">Contact</span>
             </summary>
             <div class="details-content">
                 <div class="lang-es">
-                    <p>Siempre buscando nuevas oportunidades para diseñar y prototipar experiencias emocionantes.</p>
+                    <p>Siempre buscando nuevas oportunidades para diseñar y prototipar.</p>
                     <ul>
-                        <li><strong>Email:</strong> <a href="mailto:vlerena.tini@gmail.com" style="color: var(--brand-purple)">vlerena.tini@gmail.com</a></li>
-                        <li><strong>Ubicación:</strong> Chillar, Buenos Aires, AR</li>
+                        <li><strong>Email:</strong> <a href="mailto:vlerena.tini@gmail.com">vlerena.tini@gmail.com</a></li>
+                        <li><strong>Ubicación:</strong> Buenos Aires, AR</li>
                     </ul>
                 </div>
                 <div class="lang-en">
-                    <p>Always looking for new opportunities to design and prototype exciting experiences.</p>
+                    <p>Always looking for new opportunities to design and prototype.</p>
                     <ul>
-                        <li><strong>Email:</strong> <a href="mailto:vlerena.tini@gmail.com" style="color: var(--brand-purple)">vlerena.tini@gmail.com</a></li>
-                        <li><strong>Location:</strong> Chillar, Buenos Aires, AR</li>
+                        <li><strong>Email:</strong> <a href="mailto:vlerena.tini@gmail.com">vlerena.tini@gmail.com</a></li>
+                        <li><strong>Location:</strong> Buenos Aires, AR</li>
                     </ul>
                 </div>
             </div>
@@ -476,7 +440,7 @@
 
     <footer>
         <img src="imagenes/yenna-firma.png" alt="Firma Yenna" class="firma-footer">
-        <p>&copy; 2025 VL. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></p>
+        <p>&copy; 2026 Yenna. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></p>
     </footer>
 
     <script>
@@ -486,20 +450,13 @@
             const btns = document.querySelectorAll('.lang-btn');
 
             if (lang === 'es') {
-                esElements.forEach(el => {
-                    // Si el elemento es un span (como en los títulos), usar inline, si no block
-                    el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block';
-                });
+                esElements.forEach(el => el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block');
                 enElements.forEach(el => el.style.display = 'none');
-
                 btns[0].classList.add('active');
                 btns[1].classList.remove('active');
             } else {
                 esElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => {
-                    el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block';
-                });
-
+                enElements.forEach(el => el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block');
                 btns[0].classList.remove('active');
                 btns[1].classList.add('active');
             }
