@@ -1,138 +1,195 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game & Level Design | Yenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d0d0d;
-            --text-color: #f2f2f2;
-            --accent-color: #5a5a5a;
-            --card-bg: #1a1a1a;
-            --link-color: #88ccff;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #e0e0e0;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        /* Barra superior con botón de volver y botón de idioma */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .nav-back {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover {
+            color: #000;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            color: #000;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Botón de navegación para volver al Hub */
-        .nav-back {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--link-color);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        .nav-back:hover {
-            color: #fff;
+            padding: 20px;
         }
 
         header {
+            text-align: left;
+            padding: 4vh 0 6vh 0;
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 20px;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin: 0;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
         }
 
-        /* Estilo para los proyectos (Casos de estudio) */
+        .subtitle {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Estilo editorial para los proyectos */
         .project-section {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            border: 1px solid #333;
+            margin-bottom: 70px;
         }
 
         .project-section h2 {
-            margin-top: 0;
-            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
         }
 
         .project-tags {
-            font-size: 0.85rem;
-            color: #a0a0a0;
-            margin-bottom: 20px;
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
         .project-content p {
-            color: #b3b3b3;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 25px;
         }
 
-        /* Botón para leer GDD o ver más */
-        .btn-gdd {
+        /* Botón estilo alta costura (fondo transparente, borde fino) */
+        .btn-link {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
+            padding: 12px 24px;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
         }
 
-        .btn-gdd:hover {
-            background-color: #555;
+        .btn-link:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <a href="../index.html" class="nav-back">← Volver al Hub Principal</a>
+    <div class="top-bar">
+        <a href="../index.html" class="nav-back lang-text" data-en="← Back" data-es="← Volver">← Back</a>
+        <button id="lang-toggle" class="lang-btn">ESP</button>
+    </div>
 
+    <div class="container">
         <header>
-            <h1>Game & Level Design</h1>
-            <p>Sistemas, diseño narrativo y estructuración de mecánicas.</p>
+            <h1 class="lang-text" data-en="Game & Level Design" data-es="Diseño de Juego y Niveles">Game & Level Design</h1>
+            <p class="subtitle lang-text" data-en="Systems, narrative design, and mechanics structuring." data-es="Sistemas, diseño narrativo y estructuración de mecánicas.">Systems, narrative design, and mechanics structuring.</p>
         </header>
 
         <main>
             <section class="project-section">
-                <h2>Simulador de Granjas (En Desarrollo)</h2>
-                <div class="project-tags">Game Design | Balance de Economía | Mecánicas 2.5D</div>
+                <h2 class="lang-text" data-en="Farming Simulator (In Development)" data-es="Simulador de Granjas (En Desarrollo)">Farming Simulator (In Development)</h2>
+                <div class="project-tags lang-text" data-en="Game Design | Economy Balance | 2.5D Mechanics" data-es="Game Design | Balance de Economía | Mecánicas 2.5D">Game Design | Economy Balance | 2.5D Mechanics</div>
                 <div class="project-content">
-                    <p>Desarrollo de mecánicas principales, diseño del bucle de juego (core loop) y planificación de sistemas de cultivo e inventario.</p>
-                    <a href="https://docs.google.com/document/d/1Oac0OM8bZS89K369qtnGsxEJ8YT-fVrGXhaeaEn7Y2E/edit?usp=sharing" class="btn-gdd">Leer Documento de Diseño (GDD)</a>
+                    <p class="lang-text" data-en="Development of core mechanics, game loop design, and planning of farming and inventory systems." data-es="Desarrollo de mecánicas principales, diseño del bucle de juego (core loop) y planificación de sistemas de cultivo e inventario.">Development of core mechanics, game loop design, and planning of farming and inventory systems.</p>
+                    <a href="#" class="btn-link lang-text" data-en="Read Game Design Document" data-es="Leer Documento de Diseño (GDD)">Read Game Design Document</a>
                 </div>
             </section>
 
             <section class="project-section">
                 <h2>Wasteland Luster: Legacy of UgU</h2>
-                <div class="project-tags">Diseño Narrativo | Worldbuilding | Proyecto Colaborativo</div>
+                <div class="project-tags lang-text" data-en="Narrative Design | Worldbuilding | Collaborative Project" data-es="Diseño Narrativo | Worldbuilding | Proyecto Colaborativo">Narrative Design | Worldbuilding | Collaborative Project</div>
                 <div class="project-content">
-                    <p>Encargada del desarrollo de la historia principal, ramificaciones narrativas y cohesión del universo.</p>
-                    <a href="https://docs.google.com/document/d/1X7ClNreQSTdsR6sLh-yeJGQ6TzBVjdHGas2mes3AJic/edit?usp=drive_link" class="btn-gdd">Ver Estructura Narrativa</a>
+                    <p class="lang-text" data-en="In charge of main story development, narrative branching, and universe cohesion." data-es="Encargada del desarrollo de la historia principal, ramificaciones narrativas y cohesión del universo.">In charge of main story development, narrative branching, and universe cohesion.</p>
+                    <a href="#" class="btn-link lang-text" data-en="View Narrative Structure" data-es="Ver Estructura Narrativa">View Narrative Structure</a>
                 </div>
             </section>
 
              <section class="project-section">
-                <h2>Proyecto Otome</h2>
-                <div class="project-tags">Diseño Narrativo | UI/UX | Flujos de Diálogo</div>
+                <h2 class="lang-text" data-en="Otome Project" data-es="Proyecto Otome">Otome Project</h2>
+                <div class="project-tags lang-text" data-en="Narrative Design | UI/UX | Dialogue Flows" data-es="Diseño Narrativo | UI/UX | Flujos de Diálogo">Narrative Design | UI/UX | Dialogue Flows</div>
                 <div class="project-content">
-                    <p>Diseño de personajes, estructura de múltiples finales y planificación de la experiencia de usuario centrada en mecánicas de mensajería.</p>
-                    <a href="https://docs.google.com/document/d/1oMqs6lCSRhOB9O-B2pWVfjqMi9ckMUC7l2NY1iWESpE/edit?usp=sharing" class="btn-gdd">Ver Diagrama de Flujo</a>
+                    <p class="lang-text" data-en="Character design, multiple endings structure, and user experience planning centered around messaging mechanics." data-es="Diseño de personajes, estructura de múltiples finales y planificación de la experiencia de usuario centrada en mecánicas de mensajería.">Character design, multiple endings structure, and user experience planning centered around messaging mechanics.</p>
+                    <a href="#" class="btn-link lang-text" data-en="View Flowchart" data-es="Ver Diagrama de Flujo">View Flowchart</a>
                 </div>
             </section>
         </main>
     </div>
 
+    <script>
+        const toggleBtn = document.getElementById('lang-toggle');
+        let isEnglish = true;
+
+        toggleBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG';
+            
+            const elements = document.querySelectorAll('.lang-text');
+            elements.forEach(el => {
+                el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
+            });
+        });
+    </script>
 </body>
 </html>
