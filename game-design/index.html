@@ -1,2 +1,138 @@
-<h1>Portfolio de Game Design</h1>
-<p>Aquí irá la documentación del juego de granjas y el desarrollo narrativo de Wasteland Luster.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game & Level Design | Yenna</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #f2f2f2;
+            --accent-color: #5a5a5a;
+            --card-bg: #1a1a1a;
+            --link-color: #88ccff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Botón de navegación para volver al Hub */
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-back:hover {
+            color: #fff;
+        }
+
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Estilo para los proyectos (Casos de estudio) */
+        .project-section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #333;
+        }
+
+        .project-section h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .project-tags {
+            font-size: 0.85rem;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            color: #b3b3b3;
+        }
+
+        /* Botón para leer GDD o ver más */
+        .btn-gdd {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-gdd:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html" class="nav-back">← Volver al Hub Principal</a>
+
+        <header>
+            <h1>Game & Level Design</h1>
+            <p>Sistemas, diseño narrativo y estructuración de mecánicas.</p>
+        </header>
+
+        <main>
+            <section class="project-section">
+                <h2>Simulador de Granjas (En Desarrollo)</h2>
+                <div class="project-tags">Game Design | Balance de Economía | Mecánicas 2.5D</div>
+                <div class="project-content">
+                    <p>Desarrollo de mecánicas principales, diseño del bucle de juego (core loop) y planificación de sistemas de cultivo e inventario.</p>
+                    <a href="#" class="btn-gdd">Leer Documento de Diseño (GDD)</a>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2>Wasteland Luster: Legacy of UgU</h2>
+                <div class="project-tags">Diseño Narrativo | Worldbuilding | Proyecto Colaborativo</div>
+                <div class="project-content">
+                    <p>Encargada del desarrollo de la historia principal, ramificaciones narrativas y cohesión del universo.</p>
+                    <a href="#" class="btn-gdd">Ver Estructura Narrativa</a>
+                </div>
+            </section>
+
+             <section class="project-section">
+                <h2>Proyecto Otome</h2>
+                <div class="project-tags">Diseño Narrativo | UI/UX | Flujos de Diálogo</div>
+                <div class="project-content">
+                    <p>Diseño de personajes, estructura de múltiples finales y planificación de la experiencia de usuario centrada en mecánicas de mensajería.</p>
+                    <a href="#" class="btn-gdd">Ver Diagrama de Flujo</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
