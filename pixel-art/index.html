@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art & Visuals | Yenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #ffffff; --text-color: #000000; --border-color: #e0e0e0; }
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; letter-spacing: 0.05em; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .nav-back, .lang-btn { background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; color: #555; text-decoration: none; transition: color 0.3s ease; }
+        .nav-back:hover, .lang-btn:hover { color: #000; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { text-align: left; padding: 4vh 0 6vh 0; border-bottom: 1px solid var(--border-color); margin-bottom: 50px; }
+        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 0.15em; margin: 0 0 10px 0; text-transform: uppercase; }
+        .subtitle { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.15em; color: #666; text-transform: uppercase; }
+        
+        /* Grilla para la galería visual */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 70px;
+        }
 
+        .gallery-item {
+            text-align: center;
+        }
+
+        /* Espacio reservado para las imágenes */
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #f5f5f5;
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            opacity: 0.8;
+        }
+
+        .gallery-item h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .gallery-item p {
+            font-size: 0.75rem;
+            color: #777;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../index.html" class="nav-back lang-text" data-en="← Back" data-es="← Volver">← Back</a>
+        <button id="lang-toggle" class="lang-btn">ESP</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="lang-text" data-en="Pixel Art & Visuals" data-es="Pixel Art y Dirección Visual">Pixel Art & Visuals</h1>
+            <p class="subtitle lang-text" data-en="Visual direction, sprites, animations, and color palettes." data-es="Dirección visual, sprites, animaciones y paletas de colores.">Visual direction, sprites, animations, and color palettes.</p>
+        </header>
+
+        <main>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-placeholder lang-text" data-en="[Image: Character Sprites]" data-es="[Imagen: Sprites de Personajes]">[Image: Character Sprites]</div>
+                    <h3 class="lang-text" data-en="Character Design" data-es="Diseño de Personajes">Character Design</h3>
+                    <p class="lang-text" data-en="Protagonists and NPCs" data-es="Protagonistas y NPCs">Protagonists and NPCs</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="image-placeholder lang-text" data-en="[Image: Environments]" data-es="[Imagen: Entornos]">[Image: Environments]</div>
+                    <h3 class="lang-text" data-en="Environment Art" data-es="Arte de Entornos">Environment Art</h3>
+                    <p class="lang-text" data-en="Tilesets and backgrounds" data-es="Tilesets y fondos">Tilesets and backgrounds</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="image-placeholder lang-text" data-en="[Image: UI Assets]" data-es="[Imagen: Assets de UI]">[Image: UI Assets]</div>
+                    <h3 class="lang-text" data-en="UI Elements" data-es="Elementos de Interfaz">UI Elements</h3>
+                    <p class="lang-text" data-en="Icons, menus, and HUDs" data-es="Íconos, menús y HUDs">Icons, menus, and HUDs</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="image-placeholder lang-text" data-en="[Image: Animations]" data-es="[Imagen: Animaciones]">[Image: Animations]</div>
+                    <h3 class="lang-text" data-en="Animations" data-es="Animaciones">Animations</h3>
+                    <p class="lang-text" data-en="Idle, walk cycles, and effects" data-es="Idle, ciclos de caminar y efectos">Idle, walk cycles, and effects</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('lang-toggle');
+        let isEnglish = true;
+        toggleBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG';
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
+            });
+        });
+    </script>
+</body>
+</html>
