@@ -196,5 +196,24 @@
             });
         });
     </script>
+   // --- SISTEMA DE AUDIO INTERACTIVO ---
+        // Cargamos el sonido (asegúrate de que el nombre coincida con el archivo que subiste)
+        const uiSound = new Audio('assets/click.mp3'); 
+        
+        // Bajamos un poco el volumen para que sea elegante y no asuste al usuario
+        uiSound.volume = 0.4; 
+
+        // Seleccionamos todos los botones y enlaces de la página
+        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link');
+
+        // Le agregamos el sonido a cada uno
+        clickables.forEach(item => {
+            item.addEventListener('mousedown', () => {
+                // Reiniciamos el sonido por si hacen clics muy rápidos
+                uiSound.currentTime = 0; 
+                uiSound.play();
+            });
+        });
+    
 </body>
 </html>
