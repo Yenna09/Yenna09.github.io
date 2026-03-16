@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yenna | Game Designer & Pixel Artist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estética de marca de lujo (Minimalista, alto contraste) */
+        /* Estética Moschino: Pop-Art, Alto Contraste, Colores Atrevidos */
         :root {
-            --bg-color: #0a0a0c; /* Un negro profundo y elegante */
-            --text-color: #eaeaea; /* Un blanco suave para que no lastime la vista */
-            --border-color: #262626; /* Líneas separadoras oscuras y sutiles */
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000; /* Bordes negros agresivos y definidos */
+            --moschino-red: #E32636; /* Rojo vibrante */
+            --moschino-yellow: #FFC000; /* Amarillo intenso */
         }
 
         body {
@@ -20,74 +22,83 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.02em;
         }
 
-        /* Barra superior para el botón de idioma */
         .top-bar {
             display: flex;
             justify-content: flex-end;
             padding: 20px 40px;
+            border-bottom: 3px solid var(--border-color); /* Línea gruesa arriba */
         }
 
         .lang-btn {
-            background: none;
+            background-color: var(--text-color);
+            color: var(--bg-color);
             border: none;
+            padding: 8px 16px;
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 0.8rem;
             letter-spacing: 0.1em;
             cursor: pointer;
-            color: #555;
-            transition: color 0.3s ease;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
         }
 
         .lang-btn:hover {
-            color: #000;
+            background-color: var(--moschino-red);
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         header {
             text-align: center;
-            padding: 8vh 0 10vh 0;
+            padding: 4vh 0 8vh 0;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            margin: 0 0 10px 0;
+            font-size: 4.5rem;
+            font-weight: 900; /* Súper negrita */
+            letter-spacing: 0.05em;
+            color: var(--moschino-red); /* El nombre en rojo protagonista */
+            margin: 0 0 5px 0;
             text-transform: uppercase;
+            text-shadow: 3px 3px 0px var(--border-color); /* Sombra pop-art */
         }
 
         .subtitle {
-            font-size: 0.85rem;
-            font-weight: 400;
+            font-size: 1rem;
+            font-weight: 700;
             letter-spacing: 0.15em;
-            color: #666;
+            color: var(--text-color);
             text-transform: uppercase;
             margin-bottom: 30px;
+            background-color: var(--moschino-yellow);
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px solid var(--border-color);
         }
 
         .intro-text {
             max-width: 600px;
             margin: 0 auto;
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: #333;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-color);
         }
 
-        /* Enlaces estilo editorial */
+        /* Enlaces con bloques de color al hacer hover */
         .portfolio-list {
             display: flex;
             flex-direction: column;
             gap: 0;
             margin-top: 40px;
-            border-top: 1px solid var(--border-color);
+            border-top: 4px solid var(--border-color);
         }
 
         .portfolio-item {
@@ -95,37 +106,38 @@
             padding: 40px 20px;
             text-decoration: none;
             color: var(--text-color);
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.4s ease, padding-left 0.4s ease;
+            border-bottom: 4px solid var(--border-color);
+            transition: all 0.3s ease;
         }
 
+        /* La magia ocurre aquí: Amarillo vibrante al pasar el mouse */
         .portfolio-item:hover {
-            background-color: #121214; /* Un gris levísimo para dar efecto de relieve */
-            padding-left: 30px;
+            background-color: var(--moschino-yellow);
+            padding-left: 40px;
         }
 
         .portfolio-item h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
             margin: 0 0 10px 0;
             text-transform: uppercase;
         }
 
         .portfolio-item p {
             margin: 0;
-            font-size: 0.85rem;
-            color: #777;
-            font-weight: 300;
+            font-size: 1rem;
+            font-weight: 700;
         }
 
         footer {
             text-align: center;
             margin-top: 100px;
             padding-bottom: 40px;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 700;
             letter-spacing: 0.1em;
-            color: #999;
+            color: var(--text-color);
             text-transform: uppercase;
         }
     </style>
@@ -133,9 +145,8 @@
 <body>
 
     <div class="top-bar">
-    <a href="contact/index.html" class="lang-btn lang-text" data-en="Contact" data-es="Contacto" style="margin-right: 20px; text-decoration: none;">Contact</a>
-
-    <button id="lang-toggle" class="lang-btn">ESP</button>
+        <a href="contact/index.html" class="lang-text" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: black; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
+        <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
     <div class="container">
@@ -176,13 +187,10 @@
         let isEnglish = true;
 
         toggleBtn.addEventListener('click', () => {
-            isEnglish = !isEnglish; // Alterna el estado
-            toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG'; // Cambia el texto del botón
-
-            // Busca todos los elementos que tienen la clase 'lang-text'
-            const elements = document.querySelectorAll('.lang-text');
+            isEnglish = !isEnglish;
+            toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG';
             
-            // Cambia el texto de cada elemento según el idioma elegido
+            const elements = document.querySelectorAll('.lang-text');
             elements.forEach(el => {
                 el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
             });
