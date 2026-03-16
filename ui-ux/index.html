@@ -80,6 +80,9 @@
             document.querySelectorAll('.lang-text').forEach(el => {
                 el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
 
+                 });
+        });
+
                 // 2. SISTEMA DE AUDIO INTERACTIVO
         const uiSound = new Audio('../assets/Click.mp3.ogg'); 
         uiSound.volume = 0.4; 
