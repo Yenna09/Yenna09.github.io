@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX & Systems | Yenna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-color: #ffffff; --text-color: #000000; --border-color: #e0e0e0; }
-        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; letter-spacing: 0.05em; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
-        .nav-back, .lang-btn { background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; color: #555; text-decoration: none; transition: color 0.3s ease; }
-        .nav-back:hover, .lang-btn:hover { color: #000; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { text-align: left; padding: 4vh 0 6vh 0; border-bottom: 1px solid var(--border-color); margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 0.15em; margin: 0 0 10px 0; text-transform: uppercase; }
-        .subtitle { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.15em; color: #666; text-transform: uppercase; }
-        .project-section { margin-bottom: 70px; }
-        .project-section h2 { font-size: 1.5rem; font-weight: 400; letter-spacing: 0.1em; margin: 0 0 5px 0; text-transform: uppercase; }
-        .project-tags { font-size: 0.75rem; color: #999; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 15px; }
-        .project-content p { font-size: 0.95rem; font-weight: 300; color: #333; margin-bottom: 25px; }
-        .btn-link { display: inline-block; padding: 12px 24px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.4s ease; }
-        .btn-link:hover { background-color: var(--text-color); color: var(--bg-color); }
+        :root {
+            --bg-color: #2EAB6F; 
+            --text-color: #000000;
+            --border-color: #000000; 
+            --moschino-red: #E32636; 
+            --moschino-yellow: #FFC000; 
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; letter-spacing: 0.02em; }
+        
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 4px solid var(--border-color); background-color: var(--bg-color); }
+        .nav-back, .lang-btn { background-color: var(--text-color); color: #fff; border: none; padding: 8px 16px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease; }
+        .nav-back:hover, .lang-btn:hover { background-color: var(--moschino-red); }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { text-align: left; padding: 2vh 0 6vh 0; border-bottom: 4px solid var(--border-color); margin-bottom: 50px; }
+        h1 { font-size: 3rem; font-weight: 900; letter-spacing: 0.05em; margin: 0 0 10px 0; text-transform: uppercase; text-shadow: 2px 2px 0px var(--border-color); color: var(--moschino-red); }
+        .subtitle { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.15em; color: var(--text-color); text-transform: uppercase; background-color: var(--moschino-yellow); display: inline-block; padding: 5px 15px; border: 2px solid var(--border-color); }
+
+        .project-section { margin-bottom: 60px; padding: 30px; border: 4px solid var(--border-color); background-color: #fff; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-section:hover { transform: translate(-5px, -5px); box-shadow: 10px 10px 0px var(--border-color); }
+        
+        .project-section h2 { font-size: 1.8rem; font-weight: 900; letter-spacing: 0.05em; margin: 0 0 5px 0; text-transform: uppercase; }
+        .project-tags { font-size: 0.8rem; font-weight: 700; color: #fff; background-color: var(--text-color); display: inline-block; padding: 3px 10px; text-transform: uppercase; margin-bottom: 20px; }
+        .project-content p { font-size: 1rem; font-weight: 400; color: #333; margin-bottom: 25px; }
+
+        .btn-link { display: inline-block; padding: 12px 24px; border: 3px solid var(--border-color); background-color: var(--moschino-yellow); color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-link:hover { background-color: var(--moschino-red); color: #fff; }
     </style>
 </head>
 <body>
+
     <div class="top-bar">
-        <a href="../index.html" class="nav-back lang-text" data-en="← Back" data-es="← Volver">← Back</a>
+        <a href="../index.html" class="nav-back lang-text" data-en="← BACK" data-es="← VOLVER">← BACK</a>
         <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
@@ -41,7 +56,7 @@
                 <div class="project-tags lang-text" data-en="Otome Project | UI/UX | Diegetic Interface" data-es="Proyecto Otome | UI/UX | Interfaz Dieléctica">Otome Project | UI/UX | Diegetic Interface</div>
                 <div class="project-content">
                     <p class="lang-text" data-en="Design of a fully immersive messaging and mobile operating system interface to enhance narrative engagement in an Otome setting." data-es="Diseño de una interfaz inmersiva de mensajería y sistema operativo móvil para potenciar la inmersión narrativa en un entorno Otome.">Design of a fully immersive messaging and mobile operating system interface to enhance narrative engagement in an Otome setting.</p>
-                    <a href="#" class="btn-link lang-text" data-en="View Interface Mockups" data-es="Ver Mockups de Interfaz">View Interface Mockups</a>
+                    <a href="#" class="btn-link lang-text" data-en="VIEW INTERFACE MOCKUPS" data-es="VER MOCKUPS DE INTERFAZ">VIEW INTERFACE MOCKUPS</a>
                 </div>
             </section>
 
@@ -50,7 +65,7 @@
                 <div class="project-tags lang-text" data-en="Farming Simulator | Systems Design | Accessibility" data-es="Simulador de Granjas | Diseño de Sistemas | Accesibilidad">Farming Simulator | Systems Design | Accessibility</div>
                 <div class="project-content">
                     <p class="lang-text" data-en="Structuring clear and accessible inventory, crafting, and economy management screens for 2.5D farming gameplay." data-es="Estructuración de pantallas claras y accesibles para inventario, crafteo y gestión de economía para gameplay de granjas 2.5D.">Structuring clear and accessible inventory, crafting, and economy management screens for 2.5D farming gameplay.</p>
-                    <a href="#" class="btn-link lang-text" data-en="View System Flow" data-es="Ver Flujo del Sistema">View System Flow</a>
+                    <a href="#" class="btn-link lang-text" data-en="VIEW SYSTEM FLOW" data-es="VER FLUJO DEL SISTEMA">VIEW SYSTEM FLOW</a>
                 </div>
             </section>
         </main>
