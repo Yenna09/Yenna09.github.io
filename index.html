@@ -145,7 +145,7 @@
 <body>
 
     <div class="top-bar">
-        <a href="contact/index.html" class="lang-text" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: black; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
+        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: black; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
         <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
@@ -202,7 +202,7 @@
         const uiSound = new Audio('assets/Click.mp3.ogg'); 
         uiSound.volume = 0.4; 
 
-        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link');
+        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link, .nav-contact');
 
         clickables.forEach(item => {
             item.addEventListener('mousedown', () => {
