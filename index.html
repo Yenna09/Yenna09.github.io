@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,8 @@
         /* Estética Moschino: Pop-Art, Alto Contraste, Colores Atrevidos */
         :root {
             --bg-color: #003049; /* Verde Azul profundo */
-            --text-color: #000000;
+            --text-color: #000000; /* Negro para fondos claros/amarillos */
+            --text-light: #F8F9FA; /* Blanco suave para el fondo azul */
             --border-color: #000000; /* Bordes negros agresivos y definidos */
             --moschino-red: #D62828; /* Rojo Escarlata */
             --moschino-yellow: #FFD166; /* Amarillo Brillante */
@@ -20,7 +22,7 @@
             padding: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-light); /* TEXTO GENERAL EN BLANCO */
             line-height: 1.8;
             letter-spacing: 0.02em;
         }
@@ -33,7 +35,7 @@
         }
 
         .lang-btn {
-            background-color: var(--text-color);
+            background-color: var(--text-light); /* Botón en blanco */
             color: var(--bg-color);
             border: none;
             padding: 8px 16px;
@@ -48,6 +50,7 @@
 
         .lang-btn:hover {
             background-color: var(--moschino-red);
+            color: var(--text-light);
         }
 
         .container {
@@ -75,7 +78,7 @@
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.15em;
-            color: var(--text-color);
+            color: var(--text-color); /* NEGRO para resaltar en la caja amarilla */
             text-transform: uppercase;
             margin-bottom: 30px;
             background-color: var(--moschino-yellow);
@@ -89,7 +92,7 @@
             margin: 0 auto;
             font-size: 1.1rem;
             font-weight: 400;
-            color: var(--text-color);
+            color: var(--text-light); /* BLANCO para leerse bien sobre azul */
         }
 
         /* Enlaces con bloques de color al hacer hover */
@@ -105,7 +108,7 @@
             display: block;
             padding: 40px 20px;
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--text-light); /* ESTADO REPOSO: BLANCO */
             border-bottom: 4px solid var(--border-color);
             transition: all 0.3s ease;
         }
@@ -113,6 +116,7 @@
         /* La magia ocurre aquí: Amarillo vibrante al pasar el mouse */
         .portfolio-item:hover {
             background-color: var(--moschino-yellow);
+            color: var(--text-color); /* ESTADO HOVER: NEGRO */
             padding-left: 40px;
         }
 
@@ -137,7 +141,7 @@
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 0.1em;
-            color: var(--text-color);
+            color: var(--text-light);
             text-transform: uppercase;
         }
     </style>
@@ -145,7 +149,7 @@
 <body>
 
     <div class="top-bar">
-        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: black; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
+        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: #F8F9FA; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
         <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
