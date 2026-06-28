@@ -4,38 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game & Level Design | Yenna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Cargamos Inter para emular a la perfección la Helvetica de image_3544e0.png -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Paleta extraída exclusivamente de image_3544e0.png */
         :root {
-            --bg-color: #003049; /* Verde Azul profundo */
-            --text-color: #000000; /* Negro para fondos claros/amarillos */
-            --text-light: #F8F9FA; /* Blanco suave para el fondo azul */
-            --border-color: #000000; /* Bordes negros agresivos y definidos */
-            --moschino-red: #D62828; /* Rojo Escarlata */
-            --moschino-yellow: #FFD166; /* Amarillo Brillante */
+            --bg-color: #A72536;        /* Brown Red (Base seria estructural) */
+            --text-light: #E9FAFF;      /* Azure Mist (Contraste superior en fondo oscuro) */
+            --text-dark: #A72536;       /* Brown Red para textos dentro de bloques claros */
+            --accent-yellow: #E8E85A;   /* Canary Yellow (Shock pop) */
+            --accent-pink: #FB4F8E;     /* Wild Strawberry (Factor diversión e interactividad) */
+            --border-color: #76A6ED;    /* Cool Horizon (Líneas divisorias estables) */
+            
+            /* UI Containers */
+            --section-bg: #E9FAFF;      /* Azure Mist */
+            --section-hover: #FB4F8E;   /* Wild Strawberry */
         }
 
-        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; letter-spacing: 0.02em; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-light); 
+            line-height: 1.8; 
+            letter-spacing: 0.01em; 
+        }
         
-        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 4px solid var(--border-color); background-color: var(--bg-color); }
-        .nav-back, .lang-btn { background-color: var(--text-color); color: var(--text-light); border: none; padding: 8px 16px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease; }
-        .nav-back:hover, .lang-btn:hover { background-color: var(--moschino-red); }
-        
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        
-        header { text-align: left; padding: 2vh 0 6vh 0; border-bottom: 4px solid var(--border-color); margin-bottom: 50px; }
-        h1 { font-size: 3rem; font-weight: 900; letter-spacing: 0.05em; margin: 0 0 10px 0; text-transform: uppercase; text-shadow: 2px 2px 0px var(--border-color); color: var(--moschino-red); }
-        .subtitle { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.15em; color: var(--text-color); text-transform: uppercase; background-color: var(--moschino-yellow); display: inline-block; padding: 5px 15px; border: 2px solid var(--border-color); }
+        .top-bar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 40px; 
+            border-bottom: 3px solid var(--border-color); 
+            background-color: var(--bg-color); 
+        }
 
-        .project-section { margin-bottom: 60px; padding: 30px; border: 4px solid var(--border-color); background-color: #fff; /* Fondo blanco para que el texto de los proyectos se lea perfecto */ transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .project-section:hover { transform: translate(-5px, -5px); box-shadow: 10px 10px 0px var(--border-color); }
-        
-        .project-section h2 { font-size: 1.8rem; font-weight: 900; letter-spacing: 0.05em; margin: 0 0 5px 0; text-transform: uppercase; }
-        .project-tags { font-size: 0.8rem; font-weight: 700; color: #fff; background-color: var(--text-color); display: inline-block; padding: 3px 10px; text-transform: uppercase; margin-bottom: 20px; }
-        .project-content p { font-size: 1rem; font-weight: 400; color: #333; margin-bottom: 25px; }
+        .nav-back, .lang-btn { 
+            background-color: var(--text-light); 
+            color: var(--bg-color); 
+            border: none; 
+            padding: 8px 16px; 
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            letter-spacing: 0.1em; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            text-decoration: none; 
+            transition: background-color 0.2s ease, color 0.2s ease; 
+        }
 
-        .btn-link { display: inline-block; padding: 12px 24px; border: 3px solid var(--border-color); background-color: var(--moschino-yellow); color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
-        .btn-link:hover { background-color: var(--moschino-red); color: #fff; }
+        .nav-back:hover, .lang-btn:hover { 
+            background-color: var(--accent-pink); 
+            color: var(--text-light); 
+        }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        header { 
+            text-align: left; 
+            padding: 2vh 0 6vh 0; 
+            border-bottom: 3px solid var(--border-color); 
+            margin-bottom: 50px; 
+        }
+
+        h1 { 
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            letter-spacing: -0.02em; 
+            margin: 0 0 10px 0; 
+            text-transform: uppercase; 
+            text-shadow: 4px 4px 0px var(--accent-pink); 
+            color: var(--accent-yellow); 
+        }
+
+        .subtitle { 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            letter-spacing: 0.15em; 
+            color: var(--bg-color); 
+            text-transform: uppercase; 
+            background-color: var(--accent-yellow); 
+            display: inline-block; 
+            padding: 5px 15px; 
+            border: 2px solid var(--border-color); 
+        }
+
+        /* Bloques Brutalistas Pop para Proyectos de Diseño */
+        .project-section { 
+            margin-bottom: 60px; 
+            padding: 35px; 
+            border: 3px solid var(--border-color); 
+            background-color: var(--section-bg); 
+            color: var(--text-dark); 
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.2s ease, border-color 0.2s ease; 
+        }
+
+        .project-section:hover { 
+            background-color: var(--section-hover); 
+            color: var(--text-light);
+            border-color: var(--text-light);
+            transform: translate(-6px, -6px); 
+            box-shadow: 10px 10px 0px var(--accent-yellow); 
+        }
+        
+        .project-section h2 { 
+            font-size: 2rem; 
+            font-weight: 900; 
+            letter-spacing: -0.01em; 
+            margin: 0 0 5px 0; 
+            text-transform: uppercase; 
+        }
+
+        .project-tags { 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            color: var(--text-light); 
+            background-color: var(--text-dark); 
+            display: inline-block; 
+            padding: 4px 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            margin-bottom: 20px; 
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .project-section:hover .project-tags {
+            background-color: var(--text-light);
+            color: var(--accent-pink);
+        }
+
+        .project-content p { 
+            font-size: 1rem; 
+            font-weight: 400; 
+            color: inherit; 
+            margin: 0 0 30px 0; 
+        }
+
+        /* Botones de enlace */
+        .btn-link { 
+            display: inline-block; 
+            padding: 12px 28px; 
+            border: 3px solid var(--bg-color); 
+            background-color: var(--accent-yellow); 
+            color: var(--bg-color); 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 900; 
+            letter-spacing: 0.05em; 
+            text-transform: uppercase; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; 
+        }
+
+        .btn-link:hover { 
+            background-color: var(--text-light); 
+            color: var(--accent-pink); 
+            border-color: var(--text-light);
+            transform: translate(-3px, -3px);
+            box-shadow: 4px 4px 0px var(--bg-color);
+        }
+
+        .project-section:hover .btn-link {
+            border-color: var(--text-light);
+        }
     </style>
 </head>
 <body>
@@ -65,13 +201,13 @@
                 <h2 class="lang-text" data-en="47 Street: Phygital Experience" data-es="47 Street: Experiencia Phygital">47 Street: Phygital Experience</h2>
                 <div class="project-tags lang-text" data-en="Game Design | Monetization | Brand Loyalty" data-es="Game Design | Monetización | Fidelización de Marca">Game Design | Monetización | Fidelización de Marca</div>
                 <div class="project-content">
-                    <p class="lang-text" data-en="Proposal for a competitive fashion multiplayer game. Designed a core loop that connects real-world store purchases with exclusive in-game cosmetic rewards (outfits, accessories, victory poses), driving upselling and brand engagement." data-es="Propuesta de juego multijugador competitivo de moda. Diseño de un core loop que conecta compras en tiendas físicas con recompensas cosméticas exclusivas in-game (outfits, accesorios, poses de victoria), impulsando el upselling y la interacción con la marca.">Propuesta de juego multijugador competitivo de moda. Diseño de un core loop que conecta compras en tiendas físicas con recompensas cosméticas exclusivas in-game (outfits, accesorios, poses de victoria), impulsando el upselling y la interacción con la marca.</p>
+                    <p class="lang-text" data-en="Proposal for a competitive fashion multiplayer game. Designed a core loop that connects real-world store purchases with exclusive in-game cosmetic rewards (outfits, accessories, victory poses), driving upselling and brand engagement." data-es="Propuesta de juego multijugador competitivo de moda. Diseño de un core loop que conecta compras en tiendas físicas con recompensas cosméticas exclusivas in-game (outfits, accesorios, poses de victoria), impulsando el upselling y la interacción con la marca.">Proposal for a competitive fashion multiplayer game. Designed a core loop that connects real-world store purchases with exclusive in-game cosmetic rewards (outfits, accessories, victory poses), driving upselling and brand engagement.</p>
                     <a href="https://docs.google.com/document/d/1xwskhiC_PobtVDeic1sVimgwpcmEz2NHqt6-ewwihZc/edit?usp=sharing" target="_blank" class="btn-link lang-text" data-en="VIEW PITCH DECK" data-es="VER PROPUESTA">VIEW PITCH DECK</a>
                 </div>
             </section>
 
             <section class="project-section">
-                <h2>Wasteland Luster: Legacy of UgU</h2>
+                <h2 class="lang-text" data-en="Wasteland Luster: Legacy of UgU" data-es="Wasteland Luster: Legacy of UgU">Wasteland Luster: Legacy of UgU</h2>
                 <div class="project-tags lang-text" data-en="Narrative Design | Worldbuilding" data-es="Diseño Narrativo | Worldbuilding">Narrative Design | Worldbuilding</div>
                 <div class="project-content">
                     <p class="lang-text" data-en="In charge of main story development, narrative branching, and universe cohesion." data-es="Encargada del desarrollo de la historia principal, ramificaciones narrativas y cohesión del universo.">In charge of main story development, narrative branching, and universe cohesion.</p>
@@ -92,6 +228,7 @@
     </div>
 
     <script>
+        // 1. SISTEMA DE IDIOMAS
         const toggleBtn = document.getElementById('lang-toggle');
         let isEnglish = true;
         toggleBtn.addEventListener('click', () => {
@@ -99,15 +236,14 @@
             toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG';
             document.querySelectorAll('.lang-text').forEach(el => {
                 el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
-
-                 });
+            });
         });
 
-                // 2. SISTEMA DE AUDIO INTERACTIVO
+        // 2. SISTEMA DE AUDIO INTERACTIVO
         const uiSound = new Audio('../assets/Click.mp3.ogg'); 
         uiSound.volume = 0.4; 
 
-        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link');
+        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link, .project-section');
 
         clickables.forEach(item => {
             item.addEventListener('mousedown', () => {
