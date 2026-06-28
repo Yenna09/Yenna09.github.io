@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX & Systems | Yenna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Cargamos Inter para emular a la perfección la Helvetica de image_3544e0.png -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Paleta extraída exclusivamente de image_3544e0.png */
         :root {
-            --bg-color: #003049; /* Verde Azul profundo */
-            --text-color: #000000; /* Negro para fondos claros/amarillos */
-            --text-light: #F8F9FA; /* Blanco suave para el fondo azul */
-            --border-color: #000000; /* Bordes negros agresivos y definidos */
-            --moschino-red: #D62828; /* Rojo Escarlata */
-            --moschino-yellow: #FFD166; /* Amarillo Brillante */
+            --bg-color: #A72536;        /* Brown Red (Base seria y profunda) */
+            --text-light: #E9FAFF;      /* Azure Mist (Contraste superior en fondo oscuro) */
+            --text-dark: #A72536;       /* Brown Red para textos dentro de bloques claros */
+            --accent-yellow: #E8E85A;   /* Canary Yellow (Shock pop) */
+            --accent-pink: #FB4F8E;     /* Wild Strawberry (Factor diversión e interactividad) */
+            --border-color: #76A6ED;    /* Cool Horizon (Líneas divisorias estables) */
+            
+            /* UI Containers */
+            --section-bg: #E9FAFF;      /* Azure Mist */
+            --section-hover: #FB4F8E;   /* Wild Strawberry */
+            --tag-bg: #000181;          /* Un azul ultra oscuro complementario para las etiquetas */
         }
 
         body { 
             margin: 0; 
             padding: 0; 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif; 
             background-color: var(--bg-color); 
-            color: var(--text-light); /* Texto general en blanco */
+            color: var(--text-light); 
             line-height: 1.8; 
-            letter-spacing: 0.02em; 
+            letter-spacing: 0.01em; 
         }
         
         .top-bar { 
@@ -30,27 +37,28 @@
             justify-content: space-between; 
             align-items: center; 
             padding: 20px 40px; 
-            border-bottom: 4px solid var(--border-color); 
+            border-bottom: 3px solid var(--border-color); 
             background-color: var(--bg-color); 
         }
 
         .nav-back, .lang-btn { 
-            background-color: var(--text-color); 
-            color: var(--text-light); 
+            background-color: var(--text-light); 
+            color: var(--bg-color); 
             border: none; 
             padding: 8px 16px; 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif; 
             font-weight: 700; 
             font-size: 0.8rem; 
             letter-spacing: 0.1em; 
             text-transform: uppercase; 
             cursor: pointer; 
             text-decoration: none; 
-            transition: background-color 0.3s ease; 
+            transition: background-color 0.2s ease, color 0.2s ease; 
         }
 
         .nav-back:hover, .lang-btn:hover { 
-            background-color: var(--moschino-red); 
+            background-color: var(--accent-pink); 
+            color: var(--text-light); 
         }
         
         .container { 
@@ -62,89 +70,108 @@
         header { 
             text-align: left; 
             padding: 2vh 0 6vh 0; 
-            border-bottom: 4px solid var(--border-color); 
+            border-bottom: 3px solid var(--border-color); 
             margin-bottom: 50px; 
         }
 
         h1 { 
-            font-size: 3rem; 
+            font-size: 3.5rem; 
             font-weight: 900; 
-            letter-spacing: 0.05em; 
+            letter-spacing: -0.02em; 
             margin: 0 0 10px 0; 
             text-transform: uppercase; 
-            text-shadow: 3px 3px 0px var(--border-color); 
-            color: var(--moschino-red); 
+            text-shadow: 4px 4px 0px var(--accent-pink); 
+            color: var(--accent-yellow); 
         }
 
         .subtitle { 
             font-size: 0.9rem; 
             font-weight: 700; 
             letter-spacing: 0.15em; 
-            color: var(--text-color); 
+            color: var(--bg-color); 
             text-transform: uppercase; 
-            background-color: var(--moschino-yellow); 
+            background-color: var(--accent-yellow); 
             display: inline-block; 
             padding: 5px 15px; 
             border: 2px solid var(--border-color); 
         }
 
+        /* Secciones de Proyectos: Enfoque UX Brutalistas */
         .project-section { 
             margin-bottom: 60px; 
-            padding: 30px; 
-            border: 4px solid var(--border-color); 
-            background-color: #fff; 
-            color: var(--text-color); /* Forzamos texto negro dentro de la caja blanca */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            padding: 35px; 
+            border: 3px solid var(--border-color); 
+            background-color: var(--section-bg); 
+            color: var(--text-dark); 
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.2s ease, border-color 0.2s ease; 
         }
 
         .project-section:hover { 
-            transform: translate(-5px, -5px); 
-            box-shadow: 10px 10px 0px var(--border-color); 
+            background-color: var(--section-hover); 
+            color: var(--text-light);
+            border-color: var(--text-light);
+            transform: translate(-6px, -6px); 
+            box-shadow: 10px 10px 0px var(--accent-yellow); 
         }
         
         .project-section h2 { 
-            font-size: 1.8rem; 
+            font-size: 2rem; 
             font-weight: 900; 
-            letter-spacing: 0.05em; 
-            margin: 0 0 5px 0; 
+            letter-spacing: -0.01em; 
+            margin: 0 0 8px 0; 
             text-transform: uppercase; 
         }
 
         .project-tags { 
-            font-size: 0.8rem; 
+            font-size: 0.75rem; 
             font-weight: 700; 
             color: var(--text-light); 
-            background-color: var(--text-color); 
+            background-color: var(--text-dark); 
             display: inline-block; 
-            padding: 3px 10px; 
+            padding: 4px 12px; 
             text-transform: uppercase; 
+            letter-spacing: 0.05em;
             margin-bottom: 20px; 
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .project-section:hover .project-tags {
+            background-color: var(--text-light);
+            color: var(--accent-pink);
         }
 
         .project-content p { 
             font-size: 1rem; 
             font-weight: 400; 
-            color: var(--text-color); /* Ajustado a negro puro en lugar de gris para mantener el estilo pop-art */
-            margin-bottom: 25px; 
+            color: inherit; 
+            margin: 0 0 30px 0; 
         }
 
+        /* Botones de acción del sistema */
         .btn-link { 
             display: inline-block; 
-            padding: 12px 24px; 
-            border: 3px solid var(--border-color); 
-            background-color: var(--moschino-yellow); 
-            color: var(--text-color); 
+            padding: 12px 28px; 
+            border: 3px solid var(--bg-color); 
+            background-color: var(--accent-yellow); 
+            color: var(--bg-color); 
             text-decoration: none; 
             font-size: 0.85rem; 
-            font-weight: 700; 
-            letter-spacing: 0.1em; 
+            font-weight: 900; 
+            letter-spacing: 0.05em; 
             text-transform: uppercase; 
-            transition: all 0.3s ease; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; 
         }
 
         .btn-link:hover { 
-            background-color: var(--moschino-red); 
-            color: var(--text-light); 
+            background-color: var(--text-light); 
+            color: var(--accent-pink); 
+            border-color: var(--text-light);
+            transform: translate(-3px, -3px);
+            box-shadow: 4px 4px 0px var(--bg-color);
+        }
+
+        .project-section:hover .btn-link {
+            border-color: var(--text-light);
         }
     </style>
 </head>
@@ -164,7 +191,7 @@
         <main>
             <section class="project-section">
                 <h2 class="lang-text" data-en="Mobile OS Simulation" data-es="Simulación de SO Móvil">Mobile OS Simulation</h2>
-                <div class="project-tags lang-text" data-en="Otome Project | UI/UX | Diegetic Interface" data-es="Proyecto Otome | UI/UX | Interfaz Dieléctica">Otome Project | UI/UX | Diegetic Interface</div>
+                <div class="project-tags lang-text" data-en="Otome Project | UI/UX | Diegetic Interface" data-es="Proyecto Otome | UI/UX | Interfaz Diegética">Otome Project | UI/UX | Diegetic Interface</div>
                 <div class="project-content">
                     <p class="lang-text" data-en="Design of a fully immersive messaging and mobile operating system interface to enhance narrative engagement in an Otome setting." data-es="Diseño de una interfaz inmersiva de mensajería y sistema operativo móvil para potenciar la inmersión narrativa en un entorno Otome.">Design of a fully immersive messaging and mobile operating system interface to enhance narrative engagement in an Otome setting.</p>
                     <a href="#" class="btn-link lang-text" data-en="VIEW INTERFACE MOCKUPS" data-es="VER MOCKUPS DE INTERFAZ">VIEW INTERFACE MOCKUPS</a>
@@ -183,6 +210,7 @@
     </div>
 
     <script>
+        // 1. SISTEMA DE IDIOMAS
         const toggleBtn = document.getElementById('lang-toggle');
         let isEnglish = true;
         toggleBtn.addEventListener('click', () => {
@@ -190,15 +218,14 @@
             toggleBtn.textContent = isEnglish ? 'ESP' : 'ENG';
             document.querySelectorAll('.lang-text').forEach(el => {
                 el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
-
-                 });
+            });
         });
 
-                // 2. SISTEMA DE AUDIO INTERACTIVO
+        // 2. SISTEMA DE AUDIO INTERACTIVO
         const uiSound = new Audio('../assets/Click.mp3.ogg'); 
         uiSound.volume = 0.4; 
 
-        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link');
+        const clickables = document.querySelectorAll('.lang-btn, .portfolio-item, .nav-back, .email-btn, .contact-item, .btn-link, .project-section');
 
         clickables.forEach(item => {
             item.addEventListener('mousedown', () => {
