@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yenna | Game Designer & Pixel Artist</title>
-    <!-- Cargamos Inter para emular a la perfección la Helvetica de image_1.png -->
+    <!-- Cargamos Inter para emular a la perfección la Helvetica -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Paleta extraída de image_1.png (order: seriousness + fun) */
+        /* Paleta extraída exclusivamente de image_35393a.png */
         :root {
-            --bg-color: #000181; /* Night Skies (fondo principal para seriedad) */
-            --text-color: #D0FFA4; /* Powdered Lime (texto claro para buen contraste y diversión) */
-            --border-color: #E8A0FF; /* Violet (acentos y bordes divertidos) */
-            --accent-seriousness: #006EE9; /* Blue Raspberry (acentos más serios) */
-            --accent-fun: #83E7FF; /* Sunny Skies (acentos más divertidos) */
-            --Name-color: #FAF4D4; /* Color de nombre de tu CSS original */
-            --lang-btn-bg: #83E7FF; /* Sunny Skies (botón divertido) */
-            --lang-btn-text: #000181; /* Night Skies (texto serio) */
-            --recuadro-bg: #E8A0FF; /* Violet (recuadro divertido) */
-            --recuadro-text: #000181; /* Night Skies (texto serio) */
-            --hover-item-bg: #006EE9; /* Blue Raspberry (hover más serio) */
-            --hover-item-text: #FAF4D4; /* Color de tu CSS original */
+            --bg-color: #071628;        /* Prussian Blue (Base seria y profunda) */
+            --text-main: #C69F89;       /* Light Bronze (Texto general legible) */
+            --title-color: #E0E2CA;     /* Beige (Contraste limpio para títulos) */
+            --shadow-color: #93032E;    /* Burgundy (Acento vibrante para sombras Pop) */
+            --border-color: #A6A15E;    /* Palm Leaf (Líneas de estructura) */
+            
+            /* UI Elements */
+            --lang-btn-bg: #E0E2CA;     /* Beige */
+            --lang-btn-text: #071628;   /* Prussian Blue */
+            --badge-bg: #93032E;        /* Burgundy */
+            --badge-text: #E0E2CA;      /* Beige */
+            
+            /* Hover States (Diversión e interactividad) */
+            --hover-bg: #A6A15E;         /* Palm Leaf */
+            --hover-text: #071628;       /* Prussian Blue */
         }
 
         body {
             margin: 0;
             padding: 0;
-            /* Prioridad absoluta a Helvetica/Inter, como en image_1.png */
             font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color); 
+            color: var(--text-main); 
             line-height: 1.8;
             letter-spacing: 0.01em;
         }
@@ -38,12 +40,12 @@
             display: flex;
             justify-content: flex-end;
             padding: 20px 40px;
-            border-bottom: 3px solid var(--border-color); /* Violeta para el borde */
+            border-bottom: 3px solid var(--border-color); 
         }
 
         .lang-btn {
-            background-color: var(--lang-btn-bg); /* Celeste para el botón */
-            color: var(--lang-btn-text); /* Azul oscuro para el texto del botón */
+            background-color: var(--lang-btn-bg); 
+            color: var(--lang-btn-text); 
             border: none;
             padding: 8px 16px;
             font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif;
@@ -52,12 +54,12 @@
             letter-spacing: 0.1em;
             cursor: pointer;
             text-transform: uppercase;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .lang-btn:hover {
-            background-color: var(--accent-fun); /* Celeste claro en hover */
-            color: var(--lang-btn-text); 
+            background-color: var(--shadow-color); 
+            color: var(--title-color); 
         }
 
         .container {
@@ -72,26 +74,27 @@
         }
 
         h1 {
-            font-size: 4.5rem;
-            font-weight: 900; /* Súper negrita, como en image_1.png */
-            letter-spacing: -0.02em; /* Estilo compacto */
-            color: var(--Name-color); /* Color original del nombre */
-            margin: 0 0 5px 0;
+            font-size: 6rem; 
+            font-weight: 900; 
+            letter-spacing: -0.03em; 
+            color: var(--title-color); 
+            margin: 0 0 15px 0;
             text-transform: uppercase;
-            text-shadow: 3px 3px 0px var(--text-color); /* Sombra con el color de texto claro */
+            /* Sombras nítidas de bloque usando el Burgundy de la paleta */
+            text-shadow: 4px 4px 0px var(--shadow-color); 
         }
 
         .subtitle {
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.15em;
-            color: var(--recuadro-text); /* Azul oscuro para texto en el recuadro */
+            color: var(--badge-text); 
             text-transform: uppercase;
             margin-bottom: 30px;
-            background-color: var(--recuadro-bg); /* Violeta para el fondo del recuadro */
+            background-color: var(--badge-bg); 
             display: inline-block;
             padding: 5px 15px;
-            border: 2px solid var(--border-color); /* Borde violeta */
+            border: 2px solid var(--border-color); 
         }
 
         .intro-text {
@@ -99,40 +102,45 @@
             margin: 0 auto;
             font-size: 1.1rem;
             font-weight: 400;
-            color: var(--text-color); /* Texto introductorio claro */
+            color: var(--title-color); /* Un tono más claro para destacar la intro */
         }
 
-        /* Enlaces con bloques de color al hacer hover */
         .portfolio-list {
             display: flex;
             flex-direction: column;
             gap: 0;
             margin-top: 40px;
-            border-top: 4px solid var(--border-color); /* Borde superior violeta */
+            border-top: 4px solid var(--border-color); 
         }
 
         .portfolio-item {
             display: block;
             padding: 40px 20px;
             text-decoration: none;
-            color: var(--text-color); /* Estado reposo con texto claro */
-            border-bottom: 4px solid var(--border-color); /* Borde inferior violeta */
+            color: var(--text-main); 
+            border-bottom: 4px solid var(--border-color); 
             transition: all 0.3s ease;
         }
 
-        /* Hover con azul para seriedad pero diversión */
+        /* Hover dinámico cambiando el tono serio por el Palm Leaf orgánico */
         .portfolio-item:hover {
-            background-color: var(--hover-item-bg); /* Azul vibrante en hover */
-            color: var(--hover-item-text); /* Color original de texto hover */
+            background-color: var(--hover-bg); 
+            color: var(--hover-text); 
             padding-left: 40px;
         }
 
         .portfolio-item h2 {
             font-size: 1.5rem;
-            font-weight: 900; /* Súper negrita */
+            font-weight: 900; 
             letter-spacing: -0.01em;
             margin: 0 0 10px 0;
             text-transform: uppercase;
+            color: var(--title-color);
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-item:hover h2 {
+            color: var(--hover-text);
         }
 
         .portfolio-item p {
@@ -148,7 +156,7 @@
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 0.1em;
-            color: var(--text-color); /* Texto de footer claro */
+            color: var(--text-main); 
             text-transform: uppercase;
         }
     </style>
@@ -156,13 +164,13 @@
 <body>
 
     <div class="top-bar">
-        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: #F8F9FA; text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
+        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: var(--title-color); text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
         <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
     <div class="container">
         <header>
-            <h1 class="lang-text" data-en="Valentina Zabala Lerena" data-es="Valentina Zabala Lerena">Valentina Zabala Lerena</h1>
+            <h1 class="lang-text" data-en="Yenna" data-es="Yenna">Yenna</h1>
             <p class="subtitle lang-text" data-en="Game Designer & Artist" data-es="Game Designer & Artist">Game Designer & Artist</p>
             <p class="intro-text lang-text" data-en="Specialized in crafting systems, immersive narratives, and unique visual directions." data-es="Especializada en crear sistemas, narrativas inmersivas y direcciones visuales únicas.">Specialized in crafting systems, immersive narratives, and unique visual directions.</p>
         </header>
