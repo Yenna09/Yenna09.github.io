@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yenna | Game Designer & Pixel Artist</title>
-    <!-- Cargamos Inter para emular a la perfección la Helvetica en entornos web -->
+    <!-- Cargamos Inter para emular a la perfección la Helvetica de image_1.png -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Estética Moschino: Pop-Art, Alto Contraste, Colores Atrevidos */
+        /* Paleta extraída de image_1.png (order: seriousness + fun) */
         :root {
-            --bg-color: #EAAF01; /*  fondo Golden Honey */
-            --text-color: #FAF4D4; /* Buttercream */
-            --border-color: #8A4C53; /* Rosewood Smoke*/
-            --Nombre: #650104; /* Cherry Noir */
-            --Recuadros: #DF8E9B; /* Recuadros fondo Rose Milk*/
+            --bg-color: #000181; /* Night Skies (fondo principal para seriedad) */
+            --text-color: #D0FFA4; /* Powdered Lime (texto claro para buen contraste y diversión) */
+            --border-color: #E8A0FF; /* Violet (acentos y bordes divertidos) */
+            --accent-seriousness: #006EE9; /* Blue Raspberry (acentos más serios) */
+            --accent-fun: #83E7FF; /* Sunny Skies (acentos más divertidos) */
+            --Name-color: #FAF4D4; /* Color de nombre de tu CSS original */
+            --lang-btn-bg: #83E7FF; /* Sunny Skies (botón divertido) */
+            --lang-btn-text: #000181; /* Night Skies (texto serio) */
+            --recuadro-bg: #E8A0FF; /* Violet (recuadro divertido) */
+            --recuadro-text: #000181; /* Night Skies (texto serio) */
+            --hover-item-bg: #006EE9; /* Blue Raspberry (hover más serio) */
+            --hover-item-text: #FAF4D4; /* Color de tu CSS original */
         }
 
         body {
             margin: 0;
             padding: 0;
-            /* Prioridad absoluta a Helvetica/Inter con un renderizado limpio */
-            font-family: 'Helvetica', 'Arial', 'Inter', sans-serif;
+            /* Prioridad absoluta a Helvetica/Inter, como en image_1.png */
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color); /* TEXTO GENERAL EN BLANCO */
+            color: var(--text-color); 
             line-height: 1.8;
             letter-spacing: 0.01em;
         }
@@ -31,15 +38,15 @@
             display: flex;
             justify-content: flex-end;
             padding: 20px 40px;
-            border-bottom: 3px solid var(--border-color); /* Línea gruesa arriba */
+            border-bottom: 3px solid var(--border-color); /* Violeta para el borde */
         }
 
         .lang-btn {
-            background-color: var(--text-color); /* Botón en blanco */
-            color: var(--bg-color);
+            background-color: var(--lang-btn-bg); /* Celeste para el botón */
+            color: var(--lang-btn-text); /* Azul oscuro para el texto del botón */
             border: none;
             padding: 8px 16px;
-            font-family: 'Helvetica', 'Arial', 'Inter', sans-serif;
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Inter', sans-serif;
             font-weight: 700;
             font-size: 0.8rem;
             letter-spacing: 0.1em;
@@ -49,8 +56,8 @@
         }
 
         .lang-btn:hover {
-            background-color: var(--Nombre);
-            color: var(--text-color);
+            background-color: var(--accent-fun); /* Celeste claro en hover */
+            color: var(--lang-btn-text); 
         }
 
         .container {
@@ -66,25 +73,25 @@
 
         h1 {
             font-size: 4.5rem;
-            font-weight: 900; /* Súper negrita tipo Heavy */
-            letter-spacing: -0.02em; /* Estilo compacto como el de la imagen */
-            color: var(--Nombre); /* El nombre protagonista */
+            font-weight: 900; /* Súper negrita, como en image_1.png */
+            letter-spacing: -0.02em; /* Estilo compacto */
+            color: var(--Name-color); /* Color original del nombre */
             margin: 0 0 5px 0;
             text-transform: uppercase;
-            text-shadow: 3px 3px 0px var(--text-color); /* Sombra  */
+            text-shadow: 3px 3px 0px var(--text-color); /* Sombra con el color de texto claro */
         }
 
         .subtitle {
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.15em;
-            color: var(--text-color); /* NEGRO para resaltar en la caja amarilla */
+            color: var(--recuadro-text); /* Azul oscuro para texto en el recuadro */
             text-transform: uppercase;
             margin-bottom: 30px;
-            background-color: var(--Recuadros);
+            background-color: var(--recuadro-bg); /* Violeta para el fondo del recuadro */
             display: inline-block;
             padding: 5px 15px;
-            border: 2px solid var(--border-color);
+            border: 2px solid var(--border-color); /* Borde violeta */
         }
 
         .intro-text {
@@ -92,7 +99,7 @@
             margin: 0 auto;
             font-size: 1.1rem;
             font-weight: 400;
-            color: var(--text-color); /* BLANCO para leerse bien sobre azul */
+            color: var(--text-color); /* Texto introductorio claro */
         }
 
         /* Enlaces con bloques de color al hacer hover */
@@ -101,28 +108,28 @@
             flex-direction: column;
             gap: 0;
             margin-top: 40px;
-            border-top: 4px solid var(--border-color);
+            border-top: 4px solid var(--border-color); /* Borde superior violeta */
         }
 
         .portfolio-item {
             display: block;
             padding: 40px 20px;
             text-decoration: none;
-            color: var(--text-color); /* ESTADO REPOSO: BLANCO */
-            border-bottom: 4px solid var(--border-color);
+            color: var(--text-color); /* Estado reposo con texto claro */
+            border-bottom: 4px solid var(--border-color); /* Borde inferior violeta */
             transition: all 0.3s ease;
         }
 
-        /* La magia ocurre aquí: Amarillo vibrante al pasar el mouse */
+        /* Hover con azul para seriedad pero diversión */
         .portfolio-item:hover {
-            background-color: var(--Recuadros);
-            color: var(--text-color); /* ESTADO HOVER: NEGRO */
+            background-color: var(--hover-item-bg); /* Azul vibrante en hover */
+            color: var(--hover-item-text); /* Color original de texto hover */
             padding-left: 40px;
         }
 
         .portfolio-item h2 {
             font-size: 1.5rem;
-            font-weight: 900;
+            font-weight: 900; /* Súper negrita */
             letter-spacing: -0.01em;
             margin: 0 0 10px 0;
             text-transform: uppercase;
@@ -141,7 +148,7 @@
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 0.1em;
-            color: var(--text-color);
+            color: var(--text-color); /* Texto de footer claro */
             text-transform: uppercase;
         }
     </style>
