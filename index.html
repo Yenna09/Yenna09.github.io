@@ -7,23 +7,25 @@
     <!-- Cargamos Inter para emular a la perfección la Helvetica -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Paleta extraída exclusivamente de image_35393a.png */
+        /* Paleta extraída exclusivamente de image_3544e0.png */
         :root {
-            --bg-color: #071628;        /* Prussian Blue (Base seria y profunda) */
-            --text-main: #C69F89;       /* Light Bronze (Texto general legible) */
-            --title-color: #E0E2CA;     /* Beige (Contraste limpio para títulos) */
-            --shadow-color: #93032E;    /* Burgundy (Acento vibrante para sombras Pop) */
-            --border-color: #A6A15E;    /* Palm Leaf (Líneas de estructura) */
+            --bg-color: #A72536;        /* Brown Red (Base profunda, seria pero con personalidad) */
+            --text-main: #E9FAFF;       /* Azure Mist (Contraste impecable y limpio para lectura) */
+            
+            /* Encabezado e Identidad */
+            --title-color: #E8E85A;     /* Canary Yellow (Impacto pop instantáneo) */
+            --title-shadow: #FB4F8E;    /* Wild Strawberry (Sombra vibrante) */
             
             /* UI Elements */
-            --lang-btn-bg: #E0E2CA;     /* Beige */
-            --lang-btn-text: #071628;   /* Prussian Blue */
-            --badge-bg: #93032E;        /* Burgundy */
-            --badge-text: #E0E2CA;      /* Beige */
+            --border-color: #76A6ED;    /* Cool Horizon (Líneas de estructura estables) */
+            --badge-bg: #E9FAFF;        /* Azure Mist */
+            --badge-text: #A72536;      /* Brown Red */
+            --lang-btn-bg: #E8E85A;     /* Canary Yellow */
+            --lang-btn-text: #A72536;   /* Brown Red */
             
-            /* Hover States (Diversión e interactividad) */
-            --hover-bg: #A6A15E;         /* Palm Leaf */
-            --hover-text: #071628;       /* Prussian Blue */
+            /* Hover States (Máxima energía interactiva) */
+            --hover-bg: #FB4F8E;        /* Wild Strawberry */
+            --hover-text: #E9FAFF;      /* Azure Mist */
         }
 
         body {
@@ -54,12 +56,12 @@
             letter-spacing: 0.1em;
             cursor: pointer;
             text-transform: uppercase;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         .lang-btn:hover {
-            background-color: var(--shadow-color); 
-            color: var(--title-color); 
+            background-color: var(--hover-bg); 
+            color: var(--hover-text); 
         }
 
         .container {
@@ -80,8 +82,8 @@
             color: var(--title-color); 
             margin: 0 0 15px 0;
             text-transform: uppercase;
-            /* Sombras nítidas de bloque usando el Burgundy de la paleta */
-            text-shadow: 4px 4px 0px var(--shadow-color); 
+            /* Sombra nítida estilo sticker/pop-art usando Wild Strawberry */
+            text-shadow: 5px 5px 0px var(--title-shadow); 
         }
 
         .subtitle {
@@ -94,15 +96,15 @@
             background-color: var(--badge-bg); 
             display: inline-block;
             padding: 5px 15px;
-            border: 2px solid var(--border-color); 
+            border: 2px solid var(--title-color); 
         }
 
         .intro-text {
             max-width: 600px;
             margin: 0 auto;
             font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--title-color); /* Un tono más claro para destacar la intro */
+            font-weight: 700; /* Un poco más de grosor para recortar contra el fondo */
+            color: var(--text-main);
         }
 
         .portfolio-list {
@@ -119,10 +121,10 @@
             text-decoration: none;
             color: var(--text-main); 
             border-bottom: 4px solid var(--border-color); 
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Hover dinámico cambiando el tono serio por el Palm Leaf orgánico */
+        /* Hover dinámico e impactante */
         .portfolio-item:hover {
             background-color: var(--hover-bg); 
             color: var(--hover-text); 
@@ -136,7 +138,7 @@
             margin: 0 0 10px 0;
             text-transform: uppercase;
             color: var(--title-color);
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .portfolio-item:hover h2 {
@@ -164,7 +166,7 @@
 <body>
 
     <div class="top-bar">
-        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: var(--title-color); text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
+        <a href="contact/index.html" class="lang-text nav-contact" data-en="CONTACT" data-es="CONTACTO" style="font-weight: 700; color: var(--text-main); text-decoration: none; margin-right: 30px; align-self: center; letter-spacing: 0.1em;">CONTACT</a>
         <button id="lang-toggle" class="lang-btn">ESP</button>
     </div>
 
